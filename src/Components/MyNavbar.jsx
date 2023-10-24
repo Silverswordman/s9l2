@@ -7,10 +7,10 @@ function CustomNavbar() {
     <Navbar bg="warning" data-bs-theme="light" sticky="top">
       <Container fluid>
         <Navbar.Brand href="#home">Book4You</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse
-          id="responsive-navbar-nav"
-          className=" flex-shrink-0 "
+          id="basic-navbar-nav"
+          className="justify-content-end flex-shrink-0 "
         >
           <Nav className="me-auto ">
             <Nav.Link href="#home">Home</Nav.Link>
