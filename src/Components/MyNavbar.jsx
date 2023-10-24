@@ -10,7 +10,7 @@ function CustomNavbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse
           id="responsive-navbar-nav"
-          className="justify-content-end flex-shrink-0 "
+          className=" flex-shrink-0 "
         >
           <Nav className="me-auto ">
             <Nav.Link href="#home">Home</Nav.Link>

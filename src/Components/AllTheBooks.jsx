@@ -7,8 +7,7 @@ function AllTheBooks() {
     <Container>
       <Row>
         <BookCard />
-        <BookCard />
-        <BookCard />
+       
       </Row>
     </Container>
   );
