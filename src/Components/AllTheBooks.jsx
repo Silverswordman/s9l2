@@ -1,12 +1,14 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import BookCard from "./Fantasycard";
+import FantasyBooks from "./Fantasycard";
+import HistoryBooks from "./HistoryCard";
 
 function AllTheBooks() {
   return (
     <Container>
       <Row>
-        <BookCard />
+        <FantasyBooks />
+        <HistoryBooks />
       </Row>
     </Container>
   );
