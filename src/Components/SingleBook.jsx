@@ -23,7 +23,7 @@ class SingleBook extends Component {
             onClick={this.Clickedbook}
             src={this.props.Libro.img}
             className={` p-3 h-75 ${
-              this.state.selected ? "bg-danger" : "bg-warning-subtle"
+              this.state.selected ? "bg-warning" : "bg-warning-subtle"
             }`}
           />
           <Card.Body className="bg-warning-subtle  ">
