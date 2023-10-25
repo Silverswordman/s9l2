@@ -9,6 +9,17 @@ import Row from "react-bootstrap/Row";
 // import SingleBook from "./Components/SingleBook";
 import BookList from "./Components/BookList";
 import fantasybooks from "./data/books/fantasy.json";
+import historybooks from "./data/books/history.json";
+import horrorbooks from "./data/books/horror.json";
+import romancebooks from "./data/books/romance.json";
+import scifibooks from "./data/books/scifi.json";
+
+const newbookArray = fantasybooks.concat(
+  historybooks,
+  horrorbooks,
+  romancebooks,
+  scifibooks
+);
 
 function App() {
   return (
@@ -16,12 +27,11 @@ function App() {
       <PersonalNavbar />
       <Alert />
       <main>
-      <Container>
-      <Row>
-        
-        <BookList ArrayofBooks={fantasybooks}/>
-        </Row>
-    </Container>
+        <Container>
+          <Row>
+            <BookList ArrayofBooks={newbookArray} />
+          </Row>
+        </Container>
       </main>
       <PersonalFooter />
     </div>

@@ -14,6 +14,7 @@ class SingleBook extends Component {
       this.setState({ selected: false });
     }
   };
+  
 
   render() {
     return (

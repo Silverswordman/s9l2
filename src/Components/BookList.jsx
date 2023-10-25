@@ -1,13 +1,21 @@
 import { Component } from "react";
 import SingleBook from "./SingleBook";
-// import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
+import FormGenere from "./form";
 
 class BookList extends Component {
+  state = {
+    searchValue: "",
+  };
   render() {
-    return this.props.ArrayofBooks.map((onebook) => {
-      return <SingleBook Libro={onebook} />;
-    });
+    return (
+      <>
+        <FormGenere></FormGenere>
+
+        {this.props.ArrayofBooks.map((onebook) => {
+          return <SingleBook Libro={onebook} key={onebook.asin} />;
+        })}
+      </>
+    );
   }
 }
 export default BookList;
