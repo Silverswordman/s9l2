@@ -14,28 +14,25 @@ class SingleBook extends Component {
       this.setState({ selected: false });
     }
   };
-  
 
   render() {
     return (
-      <Col sm={12} md={6} lg={3} key={this.props.Libro.asin} className=" p-2">
-        <Card className="h-100 ">
-          <Card.Img
-            onClick={this.Clickedbook}
-            src={this.props.Libro.img}
-            className={` p-3 h-75 ${
-              this.state.selected ? "bg-warning" : "bg-warning-subtle"
-            }`}
-          />
-          <Card.Body className="bg-warning-subtle  ">
-            <Card.Title>
-              <p>{this.props.Libro.title}</p>
-            </Card.Title>
-            <Card.Text>Categoria: "{this.props.Libro.category}"</Card.Text>
-            <Button variant="success">€ {this.props.Libro.price}</Button>
-          </Card.Body>
-        </Card>
-      </Col>
+      <Card className="h-100 " key={this.props.Libro.asin}>
+        <Card.Img
+          onClick={this.Clickedbook}
+          src={this.props.Libro.img}
+          className={` p-3 h-75 ${
+            this.state.selected ? "bg-warning" : "bg-warning-subtle"
+          }`}
+        />
+        <Card.Body className="bg-warning-subtle  ">
+          <Card.Title>
+            <p>{this.props.Libro.title}</p>
+          </Card.Title>
+          <Card.Text>Categoria: "{this.props.Libro.category}"</Card.Text>
+          <Button variant="success">€ {this.props.Libro.price}</Button>
+        </Card.Body>
+      </Card>
     );
   }
 }
