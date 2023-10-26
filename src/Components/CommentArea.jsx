@@ -7,17 +7,17 @@ const key =
 
 class CommentArea extends Component {
   state = {
-    review: {
-      comment: "",
-      rate: "",
-      elementId: "",
-    },
+    reviews: [],
   };
+
+  componentDidMount() {
+    this.getComments();
+  }
 
   getComments = async () => {
     try {
-      let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/comments/",
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/comments/${this.props.bookId}`,
         {
           headers: {
             Authorization: key,
@@ -26,27 +26,28 @@ class CommentArea extends Component {
       );
       if (response.ok) {
         const data = await response.json();
-        console.log("hello", data);
+        console.log("Commenti libro", data);
+        this.setState({
+          reviews: data,
+        });
       } else {
-        throw new Error("errore");
+        throw new Error("errore commenti");
       }
     } catch (error) {
       console.log(error, "errorone");
     }
   };
-  componentDidMount() {
-    this.getComments();
-  }
 
   render() {
     return (
-      <>
-        <div>
-          <p>Hola</p>
-          <CommentList></CommentList>
-          <AddComment></AddComment>
-        </div>
-      </>
+      <div>
+        {/* <p>Hola</p> */}
+        {/* <p>{this.state.review.comment}</p>
+          <p>{this.state.review.rate}</p>
+          <p>{this.state.review.elementId}</p> */}
+        <CommentList comments={this.state.reviews}></CommentList>
+        <AddComment bookId={this.props.bookId} />
+      </div>
     );
   }
 }
