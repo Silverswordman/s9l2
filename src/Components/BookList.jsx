@@ -26,11 +26,13 @@ class BookList extends Component {
         </Row>
 
         {this.props.ArrayofBooks.filter((onebook) =>
-          onebook.title.includes(this.state.searchText)
+          onebook.title
+            .toLowerCase()
+            .includes(this.state.searchText.toLowerCase())
         ).map((onebook) => {
           return (
             <Col sm={12} md={6} lg={3} key={this.props.Libro} className=" p-2">
-              <SingleBook Libro={onebook} />
+              <SingleBook Libro={onebook} key={onebook.asin} />
             </Col>
           );
         })}

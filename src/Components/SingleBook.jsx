@@ -1,7 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
+
 import { Component } from "react";
+import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   state = { selected: false };
@@ -26,12 +27,15 @@ class SingleBook extends Component {
           }`}
         />
         <Card.Body className="bg-warning-subtle  ">
-          <Card.Title>
+          <Card.Title className="text-truncate">
             <p>{this.props.Libro.title}</p>
           </Card.Title>
           <Card.Text>Categoria: "{this.props.Libro.category}"</Card.Text>
           <Button variant="success">€ {this.props.Libro.price}</Button>
         </Card.Body>
+        {this.state.selected === true && (
+          <CommentArea bookId={this.props.Libro.asin} />
+        )}
       </Card>
     );
   }
