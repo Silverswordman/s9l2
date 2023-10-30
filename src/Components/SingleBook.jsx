@@ -33,9 +33,9 @@ class SingleBook extends Component {
           <Card.Text>Categoria: "{this.props.Libro.category}"</Card.Text>
           <Button variant="success">€ {this.props.Libro.price}</Button>
         </Card.Body>
-        {this.state.selected === true && (
+        {/* {this.state.selected === true && (
           <CommentArea bookId={this.props.Libro.asin} />
-        )}
+        )} */}
       </Card>
     );
   }

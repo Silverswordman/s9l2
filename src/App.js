@@ -13,6 +13,8 @@ import historybooks from "./data/books/history.json";
 import horrorbooks from "./data/books/horror.json";
 import romancebooks from "./data/books/romance.json";
 import scifibooks from "./data/books/scifi.json";
+import { Col } from "react-bootstrap";
+import CommentArea from "./Components/CommentArea";
 
 const newbookArray = fantasybooks.concat(
   historybooks,
@@ -29,8 +31,12 @@ function App() {
       <main>
         <Container>
           <Row>
-            <BookList ArrayofBooks={newbookArray} />
-            
+            <Col>
+              <BookList ArrayofBooks={newbookArray} />
+            </Col>
+            <Col>
+              <CommentArea />
+            </Col>
           </Row>
         </Container>
       </main>

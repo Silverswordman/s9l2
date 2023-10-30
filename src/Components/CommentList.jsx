@@ -9,7 +9,7 @@ const CommentList = (props) => {
           <SingleComment
             commentoUnico={x}
             key={x._id}
-            getComments={props.getComments}
+            getComments={props.comments}
           />
         );
       })}

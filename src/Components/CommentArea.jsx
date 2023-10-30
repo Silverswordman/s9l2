@@ -23,6 +23,7 @@ class CommentArea extends Component {
             Authorization: key,
           },
         }
+        
       );
       if (response.ok) {
         const data = await response.json();
@@ -46,7 +47,7 @@ class CommentArea extends Component {
           <p>{this.state.review.rate}</p>
           <p>{this.state.review.elementId}</p> */}
         <CommentList comments={this.state.reviews}></CommentList>
-        <AddComment bookId={this.props.bookId} />
+        <AddComment bookId={this.props.bookId}  />
       </div>
     );
   }

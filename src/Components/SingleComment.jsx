@@ -29,7 +29,7 @@ const SingleComment = (props) => {
             .then((res) => {
               if (res.ok) {
                 console.log("commento eliminato");
-                props.getComments();
+                props.commenti();
               } else {
                 throw new Error("errore");
               }
